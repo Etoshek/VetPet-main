@@ -2,25 +2,47 @@ import { TextField } from '@mui/material';
 import React from 'react';
 
 interface OwnerInputsProps {
-	handleOwnersInputValue: any;
-	ownersValue: string | number | undefined;
-	// ownerName: string | undefined
-	label: string;
+	ownerNumber?: number;
+	// label: string;
+	ownerEmail?: string;
+	ownerName?: string;
+	handleNameOwner: any;
+	handleOwnerPhoneValue: any;
+	handleOwnerEmailValue: any;
+
 }
 
 const OwnerInput = ({
-	handleOwnersInputValue,
-	ownersValue,
-	label,
+	// label,
+	ownerNumber,
+	ownerEmail,
+	ownerName,
+	handleNameOwner,
+	handleOwnerPhoneValue,
+	handleOwnerEmailValue,
 }: OwnerInputsProps) => {
 	return (
 		<>
 			<TextField
-				label={label}
+				label={'name'}
 				type='text'
 				variant='outlined'
-				onChange={handleOwnersInputValue}
-				value={ownersValue}
+				onChange={handleNameOwner}
+				value={ownerName}
+			/>
+			<TextField
+				label={'number'}
+				type='text'
+				variant='outlined'
+				onChange={handleOwnerPhoneValue}
+				value={ownerNumber}
+			/>
+			<TextField
+				label={'email'}
+				type='text'
+				variant='outlined'
+				onChange={handleOwnerEmailValue}
+				value={ownerEmail}
 			/>
 		</>
 	);

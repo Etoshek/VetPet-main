@@ -6,13 +6,13 @@ import OwnerInput from './OwnersInputs';
 import styled from 'styled-components';
 
 interface OwnersActionProps {
-	handleOwnerName: string | undefined;
-	handleOwnerNumber: number | undefined;
-	handleOwnerEmail: string | undefined;
-
+	handleOwnerName: any;
+	handleOwnerNumber: any;
+	handleOwnerEmail: any;
 	ownerNameValue: string | undefined;
 	ownerNumberValue: number | undefined;
 	ownerEmailValue: string | undefined;
+	handleAddActionPeoples: any;
 
 	handleAddPetOwn: any;
 }

@@ -9,6 +9,7 @@ export interface OwnerInputsProps {
 	handleOwnerName: any;
 	handleOwnerNumber: any;
 	handleOwnerEmail: any;
+
 }
 
 const OwnersList = ({

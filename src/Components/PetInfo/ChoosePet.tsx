@@ -1,42 +1,64 @@
+import { useState } from 'react';
 import * as React from 'react';
+import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 export default function ChoosePet() {
-	return (
-		<>
-		
-			<FormControl id='petKind'>
-				<InputLabel id='demo-simple-select-helper-label'>Gatunek</InputLabel>
-				<Select
-					sx={{ m: 1, minWidth: 120 }}
-					labelId='demo-simple-select-helper-label'
-					id='demo-simple-select-helper'
-				>
-					<MenuItem value=''>{/* <em>None</em> */}</MenuItem>
-					<MenuItem value={10}>Pies</MenuItem>
-					<MenuItem value={20}>Kot</MenuItem>
-					{/* <MenuItem value={30}>Thirty</MenuItem> */}
-				</Select>
-				{/* <FormHelperText>Gatunek</FormHelperText> */}
-			</FormControl>
+	const [selected, setSelected] = useState();
 
-			<FormControl id='petGender'>
-				<InputLabel id='demo-simple-select-helper-label'>Płeć</InputLabel>
-				<Select
-					sx={{ m: 1, minWidth: 120 }}
-					labelId='demo-simple-select-helper-label'
-					id='demo-simple-select-helper'
-				>
-					<MenuItem value=''>{/* <em>None</em>  */}</MenuItem>
-					<MenuItem value={10}>Suczka/Kotka</MenuItem>
-					<MenuItem value={20}>Pies/Kocur</MenuItem>
-					{/* <MenuItem value={30}>Thirty</MenuItem> */}
-				</Select>
-				{/* <FormHelperText>Gatunek</FormHelperText> */}
-			</FormControl>
-		</>
-	);
+	const handleChange = (event: SelectChangeEvent) => {
+	  setSelected(event.target.value as any);
+	  console.log(`Option selected:`, event.target.value);
+	};
+
+
+  return (
+    <Box >
+      <FormControl sx={{ minWidth: 180 }}>
+        <InputLabel id="demo-simple-select-label">Zwierze</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={selected}
+          label="Zwierze"
+          onChange={handleChange}
+        >
+          <MenuItem value={'dog'}>Pies</MenuItem>
+          <MenuItem value={'cat'}>Kot</MenuItem>
+          <MenuItem value={'rabbit'}>Królik</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl sx={{ minWidth: 180 }}>
+        <InputLabel id="demo-simple-select-label">Płeć</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={selected}
+          label="Zwierze"
+          onChange={handleChange}
+        >
+          <MenuItem value={'male'}>On</MenuItem>
+          <MenuItem value={'female'}>Ona</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl sx={{ minWidth: 180 }}>
+        <InputLabel id="demo-simple-select-label">Kastracja / Sterylizacja</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={selected}
+          label="Kastracja / Sterylizacja"
+          onChange={handleChange}
+        >
+          <MenuItem value={'yes'}>Tak</MenuItem>
+          <MenuItem value={'no'}>Nie</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  );
 }

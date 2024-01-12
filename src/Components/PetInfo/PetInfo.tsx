@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from './ChoosePet';
-
-// import FormControl from '@mui/material/FormControl';
-// import PacientData from '../PacientData';
 
 const PetInfo: React.FC = () => {
 	const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
 
 	const toggleFormVisibility = () => {
 		setIsFormVisible((prevVisibility) => !prevVisibility);
+		console.log('weight');
 	};
 
 	return (
@@ -21,19 +18,8 @@ const PetInfo: React.FC = () => {
 				<form>
 					<h1>Podstawowe Informacje</h1>
 					<h3>Dane Pacjenta</h3>
-					{/* <FormControl id='petKind'>
-						<InputLabel>
-							<MenuItem />
-						</InputLabel>
-					</FormControl> */}
-
-					{/* <FormControl id='petGender'> */}
-					<InputLabel>
-						<MenuItem />
-					</InputLabel>
-					{/* </FormControl> */}
-
-					<label>
+					<MenuItem />
+					<label id='weight'>
 						<TextField
 							label='Waga'
 							id='outlined-start-adornment'
@@ -48,29 +34,19 @@ const PetInfo: React.FC = () => {
 					<label>
 						<TextField fullWidth label='Przyczyna wizyty' id='fullWidth' />
 					</label>
-					<h3>Dane Właściciela</h3>
-					
-						{' '}
-						<TextField id='outlined-basic' label='Imię' variant='outlined' />
-						<TextField
-							id='outlined-basic'
-							label='Nazwisko'
-							variant='outlined'
-						/>
-			
-
-				
-						<TextField
-							id='outlined-basic'
-							label='Numer telefonu'
-							variant='outlined'
-						/>
-						<TextField
-							id='outlined-basic'
-							label='Adres zamieszkania'
-							variant='outlined'
-						/>
-					
+					<h3>Dane Właściciela</h3>{' '}
+					<TextField id='outlined-basic' label='Imię' variant='outlined' />
+					<TextField id='outlined-basic' label='Nazwisko' variant='outlined' />
+					<TextField
+						id='outlined-basic'
+						label='Numer telefonu'
+						variant='outlined'
+					/>
+					<TextField
+						id='outlined-basic'
+						label='Adres zamieszkania'
+						variant='outlined'
+					/>
 					<TextField
 						id='outlined-basic'
 						label='Adres Email'
@@ -83,5 +59,3 @@ const PetInfo: React.FC = () => {
 	);
 };
 export default PetInfo;
-
-// Imię i Nazwisko

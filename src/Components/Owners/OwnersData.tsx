@@ -37,9 +37,9 @@ const OwnersData = ({ handleNewPeople }: OwnersDataProps) => {
 	const handleAddActionPeoples = () => {
 		handleNewPeople({
 			id: 1,
-			name: ownerName,
-			number: ownerNumber,
-			email: ownerEmail,
+			ownerName: ownerName,
+			ownerNumber: ownerNumber,
+			ownerEmail: ownerEmail,
 		});
 	};
 
@@ -55,12 +55,13 @@ const OwnersData = ({ handleNewPeople }: OwnersDataProps) => {
 
 			<OwnersActions
 				ownerNameValue={ownerName}
-				ownerPhoneValue={ownerNumber}
+				ownerNumberValue={ownerNumber}
 				ownerEmailValue={ownerEmail}
 				handleOwnerName={handleOwnerName}
-				handleOwnerPhone={handleOwnerNumber}
-				handleOwnerEmail={handleOwnerEmail}
+				handleOwnerNumber={handleOwnerNumber}
+				handleOwnerEmail={handleOwnerEmail}handleAddPetOwn
 				handleAddActionPeoples={handleAddActionPeoples}
+				
 			/>
 		</Wrapper>
 	);
