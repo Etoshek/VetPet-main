@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -33,7 +33,9 @@ const PetOwnersList = ({ people }: NewPetOwnerProps) => {
 	const [owner, setOwner] = useState<PetsOwnersNames[]>(initialAddPetsOwner);
 
 	const handleRemove = (ownerList: PetsOwnersNames) => {
-		const petVetOwnersList = people.filter((t) => t !== ownerList);
+		const petVetOwnersList = initialAddPetsOwner?.filter(
+			(t: PetsOwnersNames) => t !== ownerList
+		);
 		setOwner(petVetOwnersList);
 	};
 

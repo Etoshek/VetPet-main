@@ -1,43 +1,18 @@
 import React from 'react';
-import OwnerInputs from './OwnersInputs';
+import Owner from './Owner';
 
-export interface OwnerInputsProps {
-	ownerName: string | undefined;
-	ownerNumber: number | undefined;
-	ownerEmail: string | undefined;
-
-	handleOwnerName: any;
-	handleOwnerNumber: any;
-	handleOwnerEmail: any;
-
+export interface OwnerListProps {
+	owners: string[]
 }
 
 const OwnersList = ({
-	ownerName,
-	ownerNumber,
-	ownerEmail,
-
-	handleOwnerName,
-	handleOwnerNumber,
-	handleOwnerEmail,
-}: OwnerInputsProps) => {
+	owners
+}: OwnerListProps) => {
 	return (
 		<>
-			<OwnerInputs
-				ownersValue={ownerName}
-				label='Imię właściciela'
-				handleOwnersInputValue={handleOwnerName}
-			/>
-			<OwnerInputs
-				ownersValue={ownerNumber}
-				label='Numer telefonu'
-				handleOwnersInputValue={handleOwnerNumber}
-			/>
-			<OwnerInputs
-				ownersValue={ownerEmail}
-				label='Email'
-				handleOwnersInputValue={handleOwnerEmail}
-			/>
+		{owners.map((owner:string)=>
+			<Owner ownerName={owner}/>
+		)}
 		</>
 	);
 };

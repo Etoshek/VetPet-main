@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ActionOwnButton from './ButtonOwn';
-import OwnerInput from './OwnersInputs';
+import OwnerInput from './OwnerInput';
 
 import styled from 'styled-components';
 
@@ -38,14 +38,15 @@ const OwnersAction = ({
 	return (
 		<ActionOwnerInputs>
 			<ActionOwnerInput>
-				<OwnerInput
+				{/* <OwnerInput
 					ownerName={ownerNameValue}
 					ownerNumber={ownerNumberValue}
 					ownerEmail={ownerEmailValue}
 					handleNameOwner={handleOwnerName}
 					handleOwnerPhoneValue={handleOwnerNumber}
 					handleOwnerEmailValue={handleOwnerEmail}
-				/>
+					ownersValue={undefined}
+				/> */}
 			</ActionOwnerInput>
 
 			<ActionOwnButton

@@ -16,7 +16,7 @@ export const OwnersMenagers = () => {
 
 	return (
 		<>
-			<OwnersData handleNewPeople={handleOwner} />
+			{/* <OwnersData handleNewPeople={handleOwner} /> */}
 			<OwnersPetsList newPeople={people} />
 		</>
 	);

@@ -1,13 +1,15 @@
 import React from 'react';
 import { VetPetManager } from './Components/VetPetManager';
+import OwnersData from './Components/Owners/OwnersData';
+import PetInfo from './Components/PetInfo/PetInfo';
 
-// import OwnersList  from './Components/Owners/OwnersList';
 
 function App() {
 	return (
 		<>
 			<VetPetManager />
-			{/* <OwnersList /> */}
+			<OwnersData/>
+			<PetInfo/>
 		</>
 	);
 }
