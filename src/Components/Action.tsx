@@ -1,54 +1,50 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
-import ActionButton from "./Button";
-import PacjentInputs from "./PacjentInputs";
+import styled from 'styled-components';
+import PacientValue from './PacientValue';
+import PetInfo from './common/buttons/PetInfo';
 
 interface ActionProps {
-  animalNameValue: string | undefined;
-  animalAgeValue: number | undefined;
+	animalNameValue: string | undefined;
+	animalAgeValue: number | undefined;
 
-  handleNameAnimal: any;
-  handleAgeAnimal: any;
-  
-  handleAddActionAnimal: any;
+	handleNameAnimal: any;
+	handleAgeAnimal: any;
+
+	FormVisibility: any;
 }
 
 const ActionInputs = styled.div`
-  display: flex;
+	display: flex;
 `;
 
 const ActionInput = styled.div`
-  margin-right: 20px;
+	margin-right: 20px;
 `;
 
 const Action = ({
-  animalNameValue,
-  animalAgeValue,
+	animalNameValue,
+	animalAgeValue,
 
-  handleNameAnimal,
-  handleAgeAnimal,
-  
-  handleAddActionAnimal,
+	handleNameAnimal,
+	handleAgeAnimal,
 
+	FormVisibility,
 }: ActionProps) => {
-  return (
-    <ActionInputs>
-      <ActionInput>
-        <PacjentInputs
-          animalName={animalNameValue}
-          animalAge={animalAgeValue}
-          handleAnimalName={handleNameAnimal}
-          handleAnimalAge={handleAgeAnimal}
-        />
-      </ActionInput>
+	return (
+		<ActionInputs>
+			<ActionInput>
+				<PacientValue
+					animalName={animalNameValue}
+					animalAge={animalAgeValue}
+					handleAnimalName={handleNameAnimal}
+					handleAnimalAge={handleAgeAnimal}
+				/>
+			</ActionInput>
 
-      <ActionButton
-        textButton="Dodaj pacjenta"
-        handleActionButton={handleAddActionAnimal}
-      />
-    </ActionInputs>
-  );
+			<PetInfo textButton='Dodaj pacjenta' handleFormButton={FormVisibility} />
+		</ActionInputs>
+	);
 };
 
 export default Action;

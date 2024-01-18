@@ -28,11 +28,11 @@ const PacientData = ({ handleNewAnimal }: PacientDataProps) => {
 		setAnimalAge(value);
 	};
 
-	const handleAddActionAnimal = () => {
+	const FormVisibility = () => {
 		handleNewAnimal({
-			id: 1, 
-			age: animalAge, 
-			name: animalName 
+			id: 1,
+			age: animalAge,
+			name: animalName,
 		});
 	};
 
@@ -43,18 +43,16 @@ const PacientData = ({ handleNewAnimal }: PacientDataProps) => {
 			<Header headerText='Lista pacjentów' animalName={animalName} />
 
 			<ul>
-				<li>imię: {animalName}</li>
-				<li>wiek: {animalAge}</li>
+				{animalName}
+				{animalAge}
 			</ul>
 
 			<Action
 				animalNameValue={animalName}
 				animalAgeValue={animalAge}
-
 				handleNameAnimal={handleNameAnimal}
 				handleAgeAnimal={handleAgeAnimal}
-				
-				handleAddActionAnimal={handleAddActionAnimal}
+				FormVisibility={FormVisibility}
 			/>
 		</Wrapper>
 	);

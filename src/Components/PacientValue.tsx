@@ -1,5 +1,5 @@
 import React from "react";
-import PacientInput from "./Input";
+import PacientInput from "./PacientInput";
 
 interface PacjentInputsProps {
   handleAnimalName: any;
@@ -9,7 +9,7 @@ interface PacjentInputsProps {
   animalAge: number | undefined;
 }
 
-const PacjentInputs = ({
+const PacientValue = ({
   handleAnimalName,
   handleAnimalAge,
   animalName,
@@ -31,4 +31,4 @@ const PacjentInputs = ({
   );
 };
 
-export default PacjentInputs;
+export default PacientValue;

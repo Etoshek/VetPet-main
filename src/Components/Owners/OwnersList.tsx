@@ -1,18 +1,16 @@
 import React from 'react';
-import Owner from './Owner';
+import Owner from './components/Owner';
 
-export interface OwnerListProps {
-	owners: string[]
+interface OwnerListProps {
+	owners: string[];
 }
 
-const OwnersList = ({
-	owners
-}: OwnerListProps) => {
+const OwnersList = ({ owners }: OwnerListProps) => {
 	return (
 		<>
-		{owners.map((owner:string)=>
-			<Owner ownerName={owner}/>
-		)}
+			{owners.map((owner: string) => (
+				<Owner ownerName={owner} />
+			))}
 		</>
 	);
 };

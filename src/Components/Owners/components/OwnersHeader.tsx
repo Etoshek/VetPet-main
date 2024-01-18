@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface OwnerHeaderProps {
+export interface OwnerHeaderProps {
 	headerText: string;
 	subheaderText?: string;
 	ownerName: string | undefined | any;

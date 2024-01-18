@@ -1,23 +1,27 @@
-import { useEffect, useState } from "react";
-import PacientData from "./PacientData";
-import VetPetList, { PetsNames } from "./VetPetList";
+import { useEffect, useState } from 'react';
+import PacientData from './PacientData';
+import VetPetList, { PetsNames } from './VetPetList';
 
-export const VetPetManager = () => {
-  const [animal, setAnimal] = useState<PetsNames>();
+interface TestX {
+	ownerName: string | undefined;
+}
+export const VetPetManager = ({ ownerName }: TestX) => {
+	const [animal, setAnimal] = useState<PetsNames>();
 
-  const handleAnimal = (value: PetsNames) => {
-    setAnimal(value);
-    console.log("HandleAnimal", value);
-  };
+	const handleAnimal = (value: PetsNames) => {
+		setAnimal(value);
+		console.log('HandleAnimal', value);
+	};
 
-  useEffect(() => {
-    console.log("Animal ze stejtu", animal);
-  }, [animal]);
+	useEffect(() => {
+		console.log('Animal ze stejtu', animal);
+	}, [animal]);
 
-  return (
-    <>
-      <PacientData handleNewAnimal={handleAnimal} />
-      <VetPetList newAnimal={animal} />
-    </>
-  );
+	return (
+		<>
+			<p>{ownerName}</p>
+			<PacientData handleNewAnimal={handleAnimal} />
+			<VetPetList newAnimal={animal} />
+		</>
+	);
 };
